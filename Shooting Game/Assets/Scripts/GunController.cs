@@ -23,8 +23,8 @@ public class GunController : MonoBehaviour {
         {
             transform.LookAt(crossHair.transform);
 
-            float h = Input.GetAxis("Mouse X") / 2;
-            float v = Input.GetAxis("Mouse Y") / 2;
+            float h = Input.GetAxis("Mouse X") / 5;
+            float v = Input.GetAxis("Mouse Y") / 5;
 
             Vector3 crosshairMove = new Vector3(h, v, 0);
             crossHair.transform.Translate(crosshairMove);
@@ -52,6 +52,7 @@ public class GunController : MonoBehaviour {
 
     void ShootAction()
     {
+        audioSource.volume = 0.05f;
         audioSource.PlayOneShot(shotSound);
         muzzleFlash.Emit(1);
 
