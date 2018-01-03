@@ -43,7 +43,7 @@ public class GunController : MonoBehaviour {
 
             crossHair.transform.position = new Vector3(x, y, 0);
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 ShootAction();
             }
