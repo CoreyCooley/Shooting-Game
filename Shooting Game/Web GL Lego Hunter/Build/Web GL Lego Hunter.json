@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Web GL Lego Hunter.data.unityweb",
+"asmCodeUrl": "Web GL Lego Hunter.asm.code.unityweb",
+"asmMemoryUrl": "Web GL Lego Hunter.asm.memory.unityweb",
+"asmFrameworkUrl": "Web GL Lego Hunter.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

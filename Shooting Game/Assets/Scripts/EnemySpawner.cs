@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        InvokeRepeating("SpawnEnemy", 0.000001f, 3);
+        InvokeRepeating("SpawnEnemy", 0.000001f, 0.75f);
 	}
 	
     void SpawnEnemy()
@@ -29,6 +29,6 @@ public class EnemySpawner : MonoBehaviour {
         newEnemy.transform.position = new Vector3(x, y, z);
         newEnemy.GetComponent<SpriteRenderer>().sprite = enemyImages[Random.Range(0, enemyImages.Length)];
 
-        newEnemy.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 460);
+        newEnemy.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 600);
     }
 }
