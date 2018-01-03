@@ -6,11 +6,19 @@ using UnityEngine.UI;
 public class GamePlay : MonoBehaviour {
 
     public Text timerText;
+    public Text scoreText;
 
-    int gameTime = 5;
+    private int roundsShot = 0;
+    private int enemyKilled = 0;
+
+    private int gameTime = 5;
 
     // Use this for initialization
     void Start () {
+
+        roundsShot = GunController.roundsShot;
+
+        scoreText.text = enemyKilled.ToString() + " / " + roundsShot.ToString();
         InvokeRepeating("TimeCounterAction", 0.000001f, 1);	
 	}
 	
@@ -36,6 +44,10 @@ public class GamePlay : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        roundsShot = GunController.roundsShot;
+        enemyKilled = GunController.kills;
+
+        scoreText.text = enemyKilled.ToString() + " / " + roundsShot.ToString();
+    }
 }

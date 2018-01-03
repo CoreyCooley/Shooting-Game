@@ -8,6 +8,8 @@ public class GunController : MonoBehaviour {
     public AudioClip shotSound;
 
     private AudioSource audioSource;
+    public static int roundsShot;
+    public static int kills;
 
 	// Use this for initialization
 	void Start () {
@@ -48,5 +50,27 @@ public class GunController : MonoBehaviour {
     void ShootAction()
     {
         audioSource.PlayOneShot(shotSound);
+        roundsShot++;
+
+        Vector2 dir = new Vector2(crossHair.transform.position.x, crossHair.transform.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.transform.position, dir);
+
+        // We shot one of the enemies
+        if( hit.collider != null && hit.collider != crossHair)
+        {
+            kills++;
+            Destroy(hit.collider.gameObject);
+        }        
+    }
+
+    public static void Reset()
+    {
+        roundsShot = 0;
+        kills = 0;
+    }
+
+    public int RoundsShot()
+    {
+        return roundsShot;
     }
 }
