@@ -23,8 +23,8 @@ public class GunController : MonoBehaviour {
         {
             transform.LookAt(crossHair.transform);
 
-            float h = Input.GetAxis("Mouse X") / 5;
-            float v = Input.GetAxis("Mouse Y") / 5;
+            float h = Input.GetAxis("Mouse X");
+            float v = Input.GetAxis("Mouse Y");
 
             Vector3 crosshairMove = new Vector3(h, v, 0);
             crossHair.transform.Translate(crosshairMove);
